@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "django-editorjs"
+name = "django-editorjs-coursive"
 version = "0.2.1"
 description = "Django plugin for using Editor.js in admin"
 authors = ["vlzh <vlzh@pm.me>"]

@@ -13,7 +13,13 @@ class EditorJsWidget(widgets.Textarea):
         return Media(
             css={"all": ["django-editorjs.css"]},
             js=(
-                "https://cdn.jsdelivr.net/combine/npm/@editorjs/editorjs@2.18.0,npm/@editorjs/paragraph@2.7.0,npm/@editorjs/image@2.4.2,npm/@editorjs/header@2.5.0,npm/@editorjs/list@1.5.0,npm/@editorjs/checklist@1.1.0,npm/@editorjs/quote@2.3.0,npm/@editorjs/raw@2.1.2,npm/@editorjs/embed@2.3.1,npm/@editorjs/delimiter@1.1.0,npm/@editorjs/warning@1.1.1,npm/@editorjs/link@2.2.1,npm/@editorjs/marker@1.2.2,npm/@editorjs/attaches@1.0.1,npm/@editorjs/table@1.2.2",
+                "https://cdn.jsdelivr.net/combine/npm/@editorjs/editorjs@2.22.2,npm/@editorjs/paragraph@2.8.0,npm/@editorjs/image@2.6.0,npm/@editorjs/header@2.6.1,npm/@editorjs/list@1.6.2,npm/@editorjs/quote@2.4.0,npm/@editorjs/embed@2.4.6,npm/@editorjs/marker@1.2.2,npm/@editorjs/attaches@1.1.0,npm/editorjs-hyperlink@1.0.6",
+                "https://cdn.jsdelivr.net/gh/spalz/editorjs-alert-coursive@1.0.4/dist/bundle.js",
+                "https://cdn.jsdelivr.net/gh/spalz/editorjs-alert-coursive-achievement/dist/bundle.js",
+                "https://cdn.jsdelivr.net/gh/spalz/editorjs-comparison/dist/bundle.js",
+                "https://cdn.jsdelivr.net/gh/spalz/editorjs-dialog-selector/dist/bundle.js",
+                "https://cdn.jsdelivr.net/gh/spalz/editorjs-attaches-audio/dist/bundle.js ",
+                "https://cdn.jsdelivr.net/gh/mr8bit/carousel-editorjs/dist/bundle.js ",
                 "django-editorjs.js",
             ),
         )

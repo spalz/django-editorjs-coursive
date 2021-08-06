@@ -46,12 +46,17 @@
     if (!isDisabled(config, "Header")) {
       tools.Header = extractToolConfig(config, "Header", {
         class: Header,
-      });
-    }
-    if (!isDisabled(config, "Checklist")) {
-      tools.Checklist = extractToolConfig(config, "Checklist", {
-        class: Checklist,
-        inlineToolbar: true,
+        config: {
+          inlineToolbar: [
+            "bold",
+            "italic",
+            "hyperlink",
+            "marker",
+            "inlineCode",
+          ],
+          levels: [2, 3, 4],
+          defaultLevel: 2,
+        },
       });
     }
     if (!isDisabled(config, "List")) {
@@ -66,31 +71,10 @@
         inlineToolbar: true,
       });
     }
-    if (!isDisabled(config, "Raw")) {
-      tools.Raw = extractToolConfig(config, "Raw", {
-        class: RawTool,
-      });
-    }
     if (!isDisabled(config, "Embed")) {
       tools.Embed = extractToolConfig(config, "Embed", {
         class: Embed,
         inlineToolbar: true,
-      });
-    }
-    if (!isDisabled(config, "Delimiter")) {
-      tools.Delimiter = extractToolConfig(config, "Delimiter", {
-        class: Delimiter,
-      });
-    }
-    if (!isDisabled(config, "Warning")) {
-      tools.Warning = extractToolConfig(config, "Warning", {
-        class: Warning,
-        inlineToolbar: true,
-      });
-    }
-    if (!isDisabled(config, "Link")) {
-      tools.Link = extractToolConfig(config, "Link", {
-        class: LinkTool,
       });
     }
     if (!isDisabled(config, "Marker")) {
@@ -103,11 +87,73 @@
         class: AttachesTool,
       });
     }
-    if (!isDisabled(config, "Table")) {
-      tools.Table = extractToolConfig(config, "Table", {
-        class: Table,
-        inlineToolbar: true,
+    if (!isDisabled(config, "Hyperlink")) {
+      tools.Hyperlink = extractToolConfig(config, "Hyperlink", {
+        class: Hyperlink,
+        inlineToolbar: false,
+        config: {
+          shortcut: "CMD+L",
+          target: "_blank",
+          rel: "nofollow",
+          availableTargets: ["_blank", "_self"],
+          availableRels: ["author", "noreferrer"],
+          validate: false,
+        },
       });
+    }
+    if (!isDisabled(config, "AlertCursive")) {
+      tools.AlertCursive = extractToolConfig(config, "AlertCursive", {
+        class: AlertCursive,
+      });
+    }
+    if (!isDisabled(config, "AlertCursiveAchievement")) {
+      tools.AlertCursiveAchievement = extractToolConfig(
+        config,
+        "AlertCursiveAchievement",
+        {
+          class: AlertCursiveAchievement,
+        }
+      );
+    }
+    if (!isDisabled(config, "AttachesAudio")) {
+      tools.AttachesAudio = extractToolConfig(config, "AttachesAudio", {
+        class: AttachesAudio,
+      });
+    }
+    if (!isDisabled(config, "Carousel")) {
+      tools.Carousel = extractToolConfig(config, "Carousel", {
+        class: Carousel,
+        config: {
+          buttonContent: "123123123123123",
+          captionPlaceholder: "123123123123123",
+        },
+      });
+    }
+    if (!isDisabled(config, "Comparison")) {
+      tools.Comparison = extractToolConfig(config, "Comparison", {
+        class: Comparison,
+      });
+    }
+    if (!isDisabled(config, "ComponentSelectorTool")) {
+      tools.ComponentSelectorTool = extractToolConfig(
+        config,
+        "ComponentSelectorTool",
+        {
+          class: ComponentSelectorTool,
+          config: {
+            components: [
+              {
+                name: "dialog_one",
+                alias: "Жуть, как так можно было сделать",
+              },
+              {
+                name: "dialog_two",
+                alias: "Как начать общение?",
+              },
+            ],
+          },
+        }
+      );
     }
 
     const editor = new EditorJS({
